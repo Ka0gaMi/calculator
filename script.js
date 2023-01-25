@@ -6,16 +6,24 @@ let currentOperation = null
 const operatorButtons = document.querySelectorAll("#operator");
 const numberButtons = document.querySelectorAll("#number");
 const clearButton = document.getElementById("clearBtn");
-const plusMinusButton = document.getElementById("plus/minusBtn");
-const percentButton = document.getElementById("percentBtn");
 const decimalButton = document.getElementById("decimalBtn");
 const equalButton = document.getElementById("equalBtn");
+const plusMinusButton = document.getElementById("plusMinusBtn");
+const percentButton = document.getElementById("percentBtn");
 const pastActionScreen = document.getElementById("past-action");
 const currentActionScreen = document.getElementById("current-action");
 
 equalButton.addEventListener("click", evaluate)
 clearButton.addEventListener("click", clear)
 decimalButton.addEventListener("click", appendDecimal)
+
+percentButton.addEventListener("click", () => 
+    currentActionScreen.textContent = percent(currentActionScreen.textContent)
+)
+
+plusMinusButton.addEventListener("click", () => 
+    currentActionScreen.textContent = plusMinus(currentActionScreen.textContent)
+)
 
 operatorButtons.forEach(operatorButtons => 
     operatorButtons.addEventListener("click", () => 
@@ -31,7 +39,7 @@ function evaluate() {
     if (currentOperation === null || shouldResetScreen) {
         return;
     }
-    if (currentOperation === "+" && currentActionScreen.textContent === "0") {
+    if (currentOperation === "÷" && currentActionScreen.textContent === "0") {
         alert("Division by 0 is prohibited!")
         return;
     }
