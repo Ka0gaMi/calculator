@@ -119,6 +119,7 @@ function operate(operator, a, b) {
             return subtract(a, b);
         case "÷":
             if (b === 0) {
+                alert("Division by 0 is prohibited!")
                 return null;
             } else {
                 return divide(a, b);
