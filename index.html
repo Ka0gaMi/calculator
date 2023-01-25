@@ -9,8 +9,9 @@
     </script>
     <title>Calculator</title>
 </head>
-<body>
-    <main class="main">
+<body onload="delayPageLoad()">
+    <div id="loader"></div>
+    <main class="main animate-bottom" id="main">
         <div class="calculator">
             <div class="screen">
                 <div class="screen-text" id="past-action"></div>
@@ -38,7 +39,7 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer animate-bottom">
         <p>
           Copyright ©
           <script>
