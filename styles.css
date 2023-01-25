@@ -2,6 +2,8 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background-color: #7c7c7c;
+    overflow: hidden;
 }
 
 .main {
@@ -88,4 +90,27 @@ body {
     height: 75%;
     font-size: 70px;
     padding-right: 10px;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+      
+.fa-github {
+    color: #222;
+    font-size: 24px;
+}
+
+.fa-github:hover {
+    scale: 1.2;
 }
