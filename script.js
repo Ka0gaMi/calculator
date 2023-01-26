@@ -135,10 +135,6 @@ function operate(operator, a, b) {
     }
 }
 
-function showNumberOnScreen(number) {
-
-}
-
 function appendDecimal() {
     if (shouldResetScreen) {
         resetScreen();
@@ -159,4 +155,14 @@ function delayPageLoad() {
 function showPage() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("main").style.display = "block";
-  }
+}
+
+function deleteNumber() {
+    currentActionScreen.textContent = currentActionScreen.textContent.toString().slice(0, -1)
+}
+
+window.addEventListener("keydown", function(e) {
+    if (e.key == "Backspace") {
+        deleteNumber()
+    }
+})
