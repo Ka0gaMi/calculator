@@ -1,3 +1,10 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-alert */
+/* eslint-disable no-return-assign */
+/* eslint-disable no-use-before-define */
 let shouldResetScreen = false
 let firstNumber = ""
 let secondNumber = ""
@@ -25,14 +32,13 @@ plusMinusButton.addEventListener("click", () =>
     currentActionScreen.textContent = plusMinus(currentActionScreen.textContent)
 )
 
-operatorButtons.forEach(operatorButtons => 
+operatorButtons.forEach((operatorButtons) => 
     operatorButtons.addEventListener("click", () => 
         setOperator(operatorButtons.textContent))
 )
 
-numberButtons.forEach(numberButtons => 
-    numberButtons.addEventListener("click", () => 
-        appendNumber(numberButtons.textContent))
+numberButtons.forEach((numberButtons) => 
+    numberButtons.addEventListener("click", () => appendNumber(numberButtons.textContent))
 )
 
 function evaluate() {
@@ -121,9 +127,9 @@ function operate(operator, a, b) {
             if (b === 0) {
                 alert("Division by 0 is prohibited!")
                 return null;
-            } else {
+            } 
                 return divide(a, b);
-            }
+            
         case "×":
             return multiply(a, b);
         case "+/-":
@@ -161,8 +167,8 @@ function deleteNumber() {
     currentActionScreen.textContent = currentActionScreen.textContent.toString().slice(0, -1)
 }
 
-window.addEventListener("keydown", function(e) {
-    if (e.key == "Backspace") {
+window.addEventListener("keydown", (e) => {
+    if (e.key === "Backspace") {
         deleteNumber()
     }
 })
